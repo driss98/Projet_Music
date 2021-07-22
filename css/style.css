@@ -1,0 +1,109 @@
+div.header-yellow{    
+    background-repeat: no-repeat;
+    max-width: 1400px;
+    margin: auto; 
+    position: relative;
+    
+}
+div.header-yellow:before{
+    background-image: url("../image/BG_map_yellow.png");
+    position: absolute;
+    content: '';
+    opacity: 0.2;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+div.header-white{    
+    background-repeat: no-repeat;
+    max-width: 1400px;
+    margin: auto;  
+    position: relative;
+}
+div.header-white:before{
+    background-image: url("../image/BG_map_white.png");
+    position: absolute;
+    content: '';
+    opacity: 0.2;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+div.header-95{    
+    background-repeat: no-repeat;
+    max-width: 1400px;
+    margin: auto;    
+    position: relative;
+}
+div.header-95:before{
+    background-image: url("../image/BG_zebra_95.png");
+    position: absolute;
+    content: '';
+    opacity: 0.2;
+    background-size: cover;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.out-rect{
+    background-image: url("../image/video_back.png");
+    position: relative;
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 600px;
+  
+}
+.out-rect:after{
+    background-image: url("../image/sole.png");
+    position: absolute;
+    background-repeat: no-repeat;   
+    content: '';
+    width: 300px;
+    height: 350px;
+    background-size: cover;
+    top: 12;
+    right: 91;
+    bottom: 0;
+}
+.modal-list{
+    background-color: #fff;
+    width: 100%;
+    /* height: 550px; */
+    margin-top:200px;
+    padding:25px;
+    display:none;
+    border-radius: 10px;    
+}
+.modal-title{
+    font-weight: bold;
+}
+.modal-list-content{
+    letter-spacing: 1px;
+    line-height: 5px;
+}
+#label_white{
+    padding:0;
+    cursor:pointer
+}
+#label_yellow{
+    padding:35px;
+    cursor:pointer
+}
+#label_95{
+    padding:35px;
+    cursor:pointer
+}
+.control-btn{
+    padding: 130px 70px 0 70px;
+    z-index:1;  
+}
+.player, .stopy, .download,  .list{
+    cursor:pointer;
+}
+

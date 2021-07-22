@@ -1,0 +1,406 @@
+<html>
+
+<head>
+    <title>Recoder Player</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container header-yellow">
+        <div class="row">
+            <div class="col-sm-6 mt-5 ml-5 ">
+                <div class="row mb-5">
+                    <img src="./image/title_yello.png" class="img-fluid title" alt="Paris">
+                </div>
+                <div class="row mt-5 mr-5 pr-5">
+                    <div class="col-sm-4" id="label_white">
+                        <img src="./image/icon_label_white.png" class="img-fluid" alt="Paris">
+                    </div>
+                    <div class="col-sm-4" id="label_yellow">
+                        <img src="./image/icon_label_yellow.png" class="img-fluid" alt="Paris">
+                    </div>
+                    <div class="col-sm-4" id="label_95">
+                        <img src="./image/PK2020_label_95_transp.png" class="img-fluid" alt="Paris">
+                    </div>
+
+                </div>
+                <div class=" mt-5">
+                    <div class="out-rect row">
+                        <div class="col-sm-8 mt-5 pl-5 p-0">
+                            <img src="./image/platte_label_D.png" id="white-D" width="380px" height="380px" alt="Paris">
+                            <img src="./image/platte_label_M.png" id="yellow-M" width="380px" height="380px" alt="Paris"
+                                style="display: none;">
+                            <img src="./image/platte_label_95.png" id="label-95" width="380px" height="380px"
+                                alt="Paris" style="display: none;">
+                            <img src="./image/platte_label_M.gif" id="yellow-M-gif" width="380px" height="380px"
+                                alt="Paris" style="display: none;">
+
+                        </div>
+                        <div class="col-sm-4 control-btn">
+                            <img src="./image/player_yellow.png" class="mt-3 player" alt="Paris">
+                            <img src="./image/stopy_yellow.png" class="mt-3 stopy" alt="Paris">
+                            <img src="./image/download_yellow.png" class="mt-3 download" alt="Paris">
+                            <img src="./image/list_yellow.png"class="mt-3 list" alt="Paris">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="modal-list">
+                    <div class="row modal-title">
+                        <p class="col-sm-8">Tracklist</p>
+                        <p class="col-sm-4 close-btn" style="text-align: right; cursor: pointer;">X</p>
+                    </div>
+                    <div class=" modal-list-content">
+                        <p>01.Surf Mesa-ily(i love you baby)</p>
+                        <p>02.Tom Gregory,Vize-Never Let Me Down</p>
+                        <p>03.Dua Lipa-Physical</p>
+                        <p>04.The Weeknd-Blinding Lights</p>
+                        <p>05.Ava Max-Salt</p>
+                        <p>06.Raye,Regard-Secrets</p>
+                        <p>07.Topic,Nico Santos-Like I Love You</p>
+                        <p>08.Benee-Supalonely</p>
+                        <p>09.Doja Cat-Say So</p>
+                        <p>10.Purple Disco Machine,Sophie and the Giants-Hypnotized</p>
+                        <p>11.Lady Gaga-Stupid Love</p>
+                        <p>12.Jonas Brothers-What A Man Gotta Do</p>
+                        <p>13.Lost Frequencies,Zonderling, Kelvin Jones-Love To Go</p>
+                        <p>14.Darius&Finlay-Clothes Off(Nanana)</p>
+                        <p>15.David Puentez,Albert Neve-Superstar</p>
+                        <p>16.Felix Jaehn-Sicko</p>
+                        <p>17.The Pussycat Dolls-React</p>
+                        <p>18.Mabel-Boyfriend</p>
+                        <p>19.Tones and I-Never Seen The Rain</p>
+                        <p>20.Rita Ora-How To Be Lonely</p>
+                        <p>21.Major Lazer-Lay Your Head On Me</p>
+                        <p>22.Surfaces-Sunday Best</p>
+                        <p>23.Powfu-death bed(coffee for your head</p>
+                        <p>24.Clueso-Tanzen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        And I did this just to make you see what it would be like (play list)
+
+
+
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        var sel_btn_flag = 1;
+        $("#label_white").click(function () {
+            sel_btn_flag = 1;//white button
+            /*button animation*/
+            $("#label_white").animate({
+                padding: 0
+            }, 1000);
+            $("#label_yellow").animate({
+                padding: '35px'
+            }, 1000);
+            $("#label_95").animate({
+                padding: '35px'
+            }, 1000);
+            /*background change*/
+            $('.container').animate({
+                opacity: 1
+            }, 1000, function () {
+                $(this).addClass('header-yellow');
+                $(this).removeClass('header-white');
+                $(this).removeClass('header-95');
+            });
+            /*modal list change*/
+            $(".modal-list").css({ 'background-color': '#fff' });
+
+            $("#white-D").show();
+            $("#yellow-M").hide();
+            $("#label-95").hide();
+
+            $("#yellow-M-gif").hide();
+
+            //mark_title
+            $(".title").attr("src", "./image/title_yello.png");
+
+            //control button
+            $(".player").attr("src", "./image/player_yellow.png");
+            $(".stopy").attr("src", "./image/stopy_yellow.png");
+            $(".download").attr("src", "./image/download_yellow.png");
+            $(".list").attr("src", "./image/list_yellow.png");
+        });
+
+        $("#label_yellow").click(function () {
+            sel_btn_flag = 2;//yellow button
+            $("#label_yellow").animate({
+                padding: 0
+            }, 1000);
+            $("#label_white").animate({
+                padding: '35px'
+            }, 1000);
+            $("#label_95").animate({
+                padding: '35px'
+            }, 1000);
+            /*background change*/
+            $('.container').animate({
+                opacity: 1
+            }, 1000, function () {
+                $(this).addClass('header-white');
+                $(this).removeClass('header-yellow');
+                $(this).removeClass('header-95');
+            });
+            $(".modal-list").css({ 'background-color': '#effe0c' });
+
+            $("#white-D").hide();
+            $("#yellow-M").show();
+            $("#label-95").hide();
+
+            $("#yellow-M-gif").hide();
+
+            //mark_title
+            $(".title").attr("src", "./image/tilte_black.png");
+
+            //control button
+            $(".player").attr("src", "./image/player_white.png");
+            $(".stopy").attr("src", "./image/stopy_white.png");
+            $(".download").attr("src", "./image/download_white.png");
+            $(".list").attr("src", "./image/list_white.png");
+        });
+
+        $("#label_95").click(function () {
+            sel_btn_flag = 3;//95 button
+            $("#label_95").animate({
+                padding: 0
+            }, 1000);
+            $("#label_yellow").animate({
+                padding: '35px'
+            }, 1000);
+            $("#label_white").animate({
+                padding: '35px'
+            }, 1000);
+            /*background change*/
+            $('.container').animate({
+                opacity: 1
+            }, 1000, function () {
+                $(this).addClass('header-95');
+                $(this).removeClass('header-yellow');
+                $(this).removeClass('header-white');
+            });
+            $(".modal-list").css({ 'background-color': '#FF1FFF' });
+
+            $("#white-D").hide();
+            $("#yellow-M").hide();
+            $("#label-95").show();
+
+            $("#yellow-M-gif").hide();
+            //mark_title
+            $(".title").attr("src", "./image/title_pink.png");
+
+             //control button
+             $(".player").attr("src", "./image/player_pink.png");
+            $(".stopy").attr("src", "./image/stopy_pink.png");
+            $(".download").attr("src", "./image/download_pink.png");
+            $(".list").attr("src", "./image/list_pink.png");
+        });
+
+        var play_flag = 0;
+        $(".player").click(function () {
+            if(sel_btn_flag === 1){//first circle click
+                if (play_flag === 0) {//player button
+                    $("#white-D").hide();
+                    $("#yellow-M").hide();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").show();//first gif
+
+                    $(this).attr("src", "./image/stop_white.png");
+
+                    $(".stopy").attr("src", "./image/stopy_yellow.png");
+                    $(".download").attr("src", "./image/download_yellow.png");
+                    $(".list").attr("src", "./image/list_yellow.png"); 
+                    
+                    play_flag = 1;
+                }
+                else {//stop button
+                    $("#white-D").hide();
+                    $("#yellow-M").show();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").hide();//first gif
+                    play_flag = 0;
+
+                    $(this).attr("src", "./image/player_yellow.png");
+
+                    $(".stopy").attr("src", "./image/stopy_yellow.png");
+                    $(".download").attr("src", "./image/download_yellow.png");
+                    $(".list").attr("src", "./image/list_yellow.png"); 
+                }
+            }
+            else if(sel_btn_flag === 2){//second circle click
+                if (play_flag === 0) {//player button
+                    $("#white-D").hide();
+                    $("#yellow-M").hide();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").show();//second gif
+                   
+                    $(this).attr("src", "./image/stop.png");
+
+                    $(".stopy").attr("src", "./image/stopy_white.png");
+                    $(".download").attr("src", "./image/download_white.png");
+                    $(".list").attr("src", "./image/list_white.png"); 
+                    
+                    play_flag = 1;
+                }
+                else {//stop button
+                    $("#white-D").hide();
+                    $("#yellow-M").show();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").hide();//second gif
+                    play_flag = 0;
+
+                    $(this).attr("src", "./image/player_white.png");
+
+                    $(".stopy").attr("src", "./image/stopy_white.png");
+                    $(".download").attr("src", "./image/download_white.png");
+                    $(".list").attr("src", "./image/list_white.png"); 
+                }
+
+            }
+            else if(sel_btn_flag == 3){//third circle click
+               
+                if (play_flag === 0) {//player button
+                    $("#white-D").hide();
+                    $("#yellow-M").hide();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").show();//third gif
+
+                    $(this).attr("src", "./image/stop_white.png");
+
+                    $(".stopy").attr("src", "./image/stopy_pink.png");
+                    $(".download").attr("src", "./image/download_pink.png");
+                    $(".list").attr("src", "./image/list_pink.png"); 
+                    
+                    play_flag = 1;
+                }
+                else {//stop button
+                    $("#white-D").hide();
+                    $("#yellow-M").show();
+                    $("#label-95").hide();
+                    $("#yellow-M-gif").hide();//third gif
+                    play_flag = 0;
+
+                    $(this).attr("src", "./image/player_pink.png");
+
+                    $(".stopy").attr("src", "./image/stopy_pink.png");
+                    $(".download").attr("src", "./image/download_pink.png");
+                    $(".list").attr("src", "./image/list_pink.png"); 
+                }
+
+            }            
+
+        });
+
+        $(".stopy").click(function () {
+            if(sel_btn_flag == 1){
+                $(this).attr("src", "./image/stopy_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_yellow.png");
+                else
+                    $(".player").attr("src", "./image/stop.png");
+
+                $(".download").attr("src", "./image/download_yellow.png");
+                $(".list").attr("src", "./image/list_yellow.png"); 
+            }
+            else if(sel_btn_flag == 2){
+                $(this).attr("src", "./image/stopy_yellow.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_white.png");
+                else
+                    $(".player").attr("src", "./image/stop_white.png");
+                $(".download").attr("src", "./image/download_white.png");
+                $(".list").attr("src", "./image/list_white.png"); 
+            }
+            else if(sel_btn_flag == 3){
+                $(this).attr("src", "./image/stopy_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_pink.png");
+                else
+                    $(".player").attr("src", "./image/stop_pink.png");
+                $(".download").attr("src", "./image/download_pink.png");
+                $(".list").attr("src", "./image/list_pink.png"); 
+            }
+        });
+
+        $(".download").click(function () {
+            if(sel_btn_flag == 1){
+                $(this).attr("src", "./image/download_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_yellow.png");
+                else
+                    $(".player").attr("src", "./image/stop.png");
+                $(".stopy").attr("src", "./image/stopy_yellow.png");
+                $(".list").attr("src", "./image/list_yellow.png"); 
+            }
+            else if(sel_btn_flag == 2){
+                $(this).attr("src", "./image/download_yellow.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_white.png");
+                else
+                    $(".player").attr("src", "./image/stop_white.png");
+                $(".stopy").attr("src", "./image/stopy_white.png");
+                $(".list").attr("src", "./image/list_white.png"); 
+            }
+            else if(sel_btn_flag == 3){
+                $(this).attr("src", "./image/download_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_pink.png");
+                else
+                    $(".player").attr("src", "./image/stop_pink.png");
+                $(".stopy").attr("src", "./image/stopy_pink.png");
+                $(".list").attr("src", "./image/list_pink.png"); 
+            }
+        });
+
+        $(".list").click(function () {
+            if(sel_btn_flag == 1){
+                $(this).attr("src", "./image/list_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_yellow.png");
+                else
+                    $(".player").attr("src", "./image/stop.png");
+
+                $(".download").attr("src", "./image/download_yellow.png");
+                $(".stopy").attr("src", "./image/stopy_yellow.png"); 
+            }
+            else if(sel_btn_flag == 2){
+                $(this).attr("src", "./image/list_yellow.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_white.png");
+                else
+                    $(".player").attr("src", "./image/stop_white.png");
+                $(".download").attr("src", "./image/download_white.png");
+                $(".stopy").attr("src", "./image/stopy_white.png"); 
+            }
+            else if(sel_btn_flag == 3){
+                $(this).attr("src", "./image/list_white.png");
+                if(play_flag == 0)
+                    $(".player").attr("src", "./image/player_pink.png");
+                else
+                    $(".player").attr("src", "./image/stop_pink.png");
+                $(".download").attr("src", "./image/download_pink.png");
+                $(".stopy").attr("src", "./image/stopy_pink.png"); 
+            }
+            $(".modal-list").show();
+        });
+        $(".close-btn").click(function () {
+            $(".modal-list").hide();
+        })
+    });
+
+</script>
+
+</html>
